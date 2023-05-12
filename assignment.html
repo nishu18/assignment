@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color:white;
+      row-gap: 5px;
+    }
+    #text{
+      cursor: pointer;
+    }
+    button  {
+      background-color: red;
+      color: white;
+      cursor: pointer;
+      width: 100px;
+      height: 50px;
+      border: 2px solid black;
+      border-radius: 10px;
+     
+    }
+    button:hover{
+        background-color: blueviolet;
+    }
+    #text1{
+        display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="text">click me, and change my color</h1>
+    <button id="button">Click</button>
+  </div>
+
+<!-- //assignment 2 -->
+
+<div class="container">
+    <h1>Check the current date and time
+    </h1>
+    <button id="button1">
+        click me
+      </button>
+</div>
+
+<!-- assignment 3 -->
+<div class="container">
+    <h2 id="text1">click the click me, and change me </h2>
+    <button id="button3">click me</button>
+  </div>
+
+  <!-- assignment 4 -->
+  <div class="container">
+    <div id="myDiv"></div>
+</div>
+
+<!-- assignment 1 -->
+
+  <script>
+    const button = document.getElementById("button");
+    const text = document.getElementById("text");
+
+    button.addEventListener('click', function() {
+        setTimeout(function(){
+            text.style.color = "red";
+        }, 5000)
+    
+    });
+  </script>
+
+     <!-- //assignment 2 -->
+   
+
+
+  <script>
+      var button1=document.getElementById("button1")
+      button1.addEventListener('click', function(){
+        setTimeout(function(){
+            const dateTime=new Date().toLocaleString();
+            alert(`The current date and time is: ${dateTime}`)
+        }, 1000)
+      })
+  </script>
+
+  <!-- //assignment 3-->
+
+  <script>
+    var button3 = document.getElementById("button3");
+    const h2 = document.getElementById("text1");
+    button3.addEventListener('click', function() {
+      setTimeout(function() {
+        if (h2.style.display === "none") {
+          h2.style.display = "block";
+        } else {
+          h2.style.display = "none";
+        }
+      }, 3000);
+    });
+  </script>
+  
+<!-- assignment 4 -->
+<script>
+    const myDiv = document.getElementById("myDiv");
+    const newText = "The <div> tag defines a division or a section in an HTML document. The <div> tag is used as a container for HTML elements - which is then styled with CSS or manipulated with JavaScript.";
+   setTimeout(function(){
+      const newPara = document.createElement("h1");
+    newPara.textContent = newText;
+
+    myDiv.appendChild(newPara);
+   },4000)
+    
+  </script>
+
+</body>
+</html>
